@@ -228,3 +228,238 @@ for (int i = 1; i == 10; i++)
     sbyte edad = sbyte.Parse(Console.ReadLine());
     Console.WriteLine("Edad es:" + edad);
 }
+
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+
+// Ciclos:
+// ciclosn for: Para cuando se sabe cuántas veces se va a repetir el ciclo.
+// for (int i = 0; i <= 2; i += 2)
+// {
+//     Console.WriteLine("Edad");
+//     sbyte edad = sbyte.Parse(Console.ReadLine());
+//     Console.WriteLine("Edad es: " + edad);
+// }
+// ciclos while: Para cuando no se sabe cuántas veces se va a repetir el ciclo.
+// Console.WriteLine("Edad");
+// sbyte edad = sbyte.Parse(Console.ReadLine());
+// sbyte edad_parametro_centinela = 99; // parametro centinela
+
+// while (edad != edad_parametro_centinela)
+// {
+//     // cuando va hacer se va hacer lo que hay en bloque de codeigo 
+//     Console.WriteLine("Puede ingresar");
+//     edad = sbyte.Parse(Console.ReadLine());
+
+//     Console.WriteLine("Edad es: ");
+//     edad = sbyte.Parse(Console.ReadLine());
+// }
+
+// ciclos do while: Para cuando no se sabe cuántas veces se va a repetir el ciclo, pero al menos se debe ejecutar una vez.
+// sbyte edad_parametro_centinela = 99;
+// Console.WriteLine("Edad: ");
+// sbyte edad = sbyte.Parse(Console.ReadLine());
+// do
+// {
+//     Console.WriteLine("Edad es: ");
+//     edad = sbyte.Parse(Console.ReadLine());
+// } while (edad != edad_parametro_centinela);
+
+
+// variable
+
+
+
+// array 
+// array - lista (string - numeros ) - diccionarios
+// string[] nombres = { "Ana", "Maria", "Jose", "Adres" };
+// foreach (var nombre in nombres)
+// {
+//     Console.WriteLine(nombres);
+// }
+
+// lista
+// List<string> nombres = new List<string>() { "Ana", "Maria", "Jose", "Andres" };
+
+// llenar lista
+// nombres.Capacity;
+// nombres.Add()
+// nombres.Add("Ana");
+// nombres.Add("Maria");
+// nombres.Add("Jose"); 
+// nombres.Add("Andres");
+
+// foreach (string nombre in nombres)
+// {
+//     Console.WriteLine(nombre);
+// }
+
+// lista numerica
+// List<int> anios = new List<int>();
+
+// anios.Add(2001);
+// anios.Add(2010);
+// anios.Add(2020);
+// anios.Add(2024);
+
+// foreach (int anio in anios)
+// {
+//     Console.WriteLine($" {anio}");
+// }
+
+// diccionario (sintaxis)
+// diccionario<tipo de datos key, value> nombre_dicionario = new Dictionary<string, int>(tipo de datos key , value);
+// Dictionary<string, int> lista_productos = new Dictionary<string, int>()
+// {
+//    {"key" , "value"},
+//    {"key" , "value"},
+//    {"key" , "value"},
+// };
+
+
+// Dictionary<string, int> lista_productos = new Dictionary<string, int>()
+// {
+//    {"Manzana" , 100},
+//    {"Pera" , 200},
+//    {"Uva" , 300},
+// };
+
+// foreach (var producto in lista_productos)
+// {
+//    Console.WriteLine($"Producto: {producto.Key}, Precio: {producto.Value}");
+// }
+
+
+// ejemplo 1
+// Dictionary<string, int> lista_productos = new Dictionary<string, int>()
+// {
+//     {"Manzana", 100},
+//     {"Pera", 200},
+//     {"Uva", 300},
+// };
+
+// bool salir = false;
+
+// while (!salir)
+// {
+//     Console.WriteLine("\n--- Control de Stock ---");
+//     Console.WriteLine("1. Ver inventario");
+//     Console.WriteLine("2. Agregar producto");
+//     Console.WriteLine("3. Retirar producto");
+//     Console.WriteLine("4. Salir");
+//     Console.Write("Seleccione una opción: ");
+
+//     string opcion = Console.ReadLine();
+
+//     switch (opcion)
+//     {
+//         case "1":
+//             Console.WriteLine("\nInventario actual:");
+//             foreach (var producto in lista_productos)
+//             {
+//                 Console.WriteLine($"Producto: {producto.Key}, Cantidad: {producto.Value}");
+//             }
+//             break;
+
+//         case "2":
+//             Console.Write("Nombre del producto a agregar: ");
+//             string prodAgregar = Console.ReadLine();
+//             Console.Write("Cantidad a agregar: ");
+//             int cantidadAgregar = int.Parse(Console.ReadLine());
+
+//             if (lista_productos.ContainsKey(prodAgregar))
+//                 lista_productos[prodAgregar] += cantidadAgregar;
+//             else
+//                 lista_productos.Add(prodAgregar, cantidadAgregar);
+
+//             Console.WriteLine("Producto agregado correctamente.");
+//             break;
+
+//         case "3":
+//             Console.Write("Nombre del producto a retirar: ");
+//             string prodRetirar = Console.ReadLine();
+//             if (lista_productos.ContainsKey(prodRetirar))
+//             {
+//                 Console.Write("Cantidad a retirar: ");
+//                 int cantidadRetirar = int.Parse(Console.ReadLine());
+//                 if (lista_productos[prodRetirar] >= cantidadRetirar)
+//                 {
+//                     lista_productos[prodRetirar] -= cantidadRetirar;
+//                     Console.WriteLine("Producto retirado correctamente.");
+//                 }
+//                 else
+//                 {
+//                     Console.WriteLine("No hay suficiente stock para retirar esa cantidad.");
+//                 }
+//             }
+//             else
+//             {
+//                 Console.WriteLine("El producto no existe en el inventario.");
+//             }
+//             break;
+
+//         case "4":
+//             salir = true;
+//             break;
+
+//         default:
+//             Console.WriteLine("Opción no válida.");
+//             break;
+//     }
+// }
+// Console.WriteLine("¡Hasta luego!");
+
+// ejemplo 2
+// Dictionary<int, int> calificaciones_sastisfaccion = new Dictionary<int, int>()
+// {
+//     {1, 0},
+//     {2, 0},
+//     {3, 0},
+//     {4, 0},
+//     {5, 0},
+// };
+
+// bool salir_encuesta = false;
+
+// while (!salir_encuesta)
+// {
+//     Console.WriteLine("\n--- Encuesta de Satisfacción ---");
+//     Console.WriteLine("1. Califique nuestro servicio del (1 al 5)");
+//     Console.WriteLine("2. Ver resultados de la encuesta");
+//     Console.WriteLine("3. Salir");
+//     Console.Write("Seleccione una opción: ");
+//     string opcion_encuesta = Console.ReadLine()!;
+
+//     switch (opcion_encuesta)
+//     {
+//         case "1":
+//         Console.Write("califique nuestro servicio del (1 al 5 ): ");
+//         if (int.TryParse(Console.ReadLine(), out int calificacion) && calificacion >= 1 && calificacion <= 5)
+//         {
+//             calificaciones_sastisfaccion[calificacion]++;
+//             Console.WriteLine("Gracias por su calificación.");
+//         }
+//         else
+//         {
+//             Console.WriteLine("Calificación no válida. Intente nuevamente.");
+//         }
+//         break;
+
+//         case "2":
+//         Console.WriteLine("Resultados de la encuesta:");
+//         for (int i = 1; i <= 5; i++)
+//         {
+//             Console.WriteLine($"Calificación {i}: {calificaciones_sastisfaccion[i]} votos");
+//         }
+//         break;
+
+//         case "3":
+//         salir_encuesta = true;
+//         break;
+//         default:
+//         Console.WriteLine("Opción no válida.");
+//             break;
+//     }
+// }
+
+
