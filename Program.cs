@@ -222,15 +222,13 @@ Console.WriteLine("Hello, World!");
 //     Console.WriteLine("No eres el hombre ideal");
 // }
 
-for (int i = 1; i == 10; i++)
-{
-    Console.WriteLine("edad");
-    sbyte edad = sbyte.Parse(Console.ReadLine());
-    Console.WriteLine("Edad es:" + edad);
-}
+// for (int i = 1; i == 10; i++)
+// {
+//     Console.WriteLine("edad");
+//     sbyte edad = sbyte.Parse(Console.ReadLine());
+//     Console.WriteLine("Edad es:" + edad);
+// }
 
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
 
 // Ciclos:
 // ciclosn for: Para cuando se sabe cuántas veces se va a repetir el ciclo.
@@ -461,5 +459,6 @@ Console.WriteLine("Hello, World!");
 //             break;
 //     }
 // }
+
 
 
